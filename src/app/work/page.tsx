@@ -1,3 +1,5 @@
+"use client"
+
 import { motion } from "motion/react"
 import { workHistory } from "@/lib/data"
 import Link from "next/link"
