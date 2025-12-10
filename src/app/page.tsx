@@ -2,7 +2,8 @@
 
 import Link from "next/link"
 import { motion } from "motion/react"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, ArrowUpRight as ArrowArrowUpRight } from "lucide-react"
+import { workHistory } from "@/lib/data"
 
 
 export default function Home() {
@@ -34,21 +35,39 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
+          className="space-y-6"
+        >
+          <div className="grid gap-4 sm:grid-cols-2">
+            {/* Teaser Cards */}
+            {workHistory.slice(0, 2).map((work) => (
+              <Link
+                key={work.slug}
+                href={`/work/${work.slug}`}
+                className="group block rounded-lg border border-border bg-card p-4 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
+              >
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors flex items-center gap-2">
+                    {work.company}
+                    <ArrowArrowUpRight size={16} className="opacity-0 -translate-y-1 translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0" />
+                  </h3>
+                  <p className="text-sm text-muted-foreground line-clamp-2">{work.description}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
           className="flex flex-wrap gap-4"
         >
-          {/* We need simple buttons. Since I didn't verify Shadcn button, I'll use standard HTML or check if I have Button. 
-             Shadcn init creates components.json but doesn't install all components automatically unless I run `add`.
-             I haven't run `shadcn add button`. 
-             I'll use standard Tailwind button classes for now to be safe, or I should have added button. 
-             "Use shadcn as the ui system" implies I should use their components.
-             I will use <button> with tailwind styling that mimics shadcn for now, or just add the button component later.
-             Actually I'll stick to a styled Link.
-          */}
           <Link
             href="/work"
             className="inline-flex h-12 items-center justify-center rounded-sm bg-primary px-8 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
           >
-            View Work
+            View All Work
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
           <Link

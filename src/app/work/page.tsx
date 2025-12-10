@@ -1,90 +1,79 @@
-"use client"
-
 import { motion } from "motion/react"
-import { ExternalLink, Github } from "lucide-react"
-
-const projects = [
-    {
-        title: "Project Alpha",
-        description: "A comprehensive dashboard for financial analytics with real-time data visualization.",
-        tags: ["Next.js", "Tailwind", "D3.js"],
-        link: "#",
-        github: "#"
-    },
-    {
-        title: "Neon Commerce",
-        description: "Modern e-commerce platform with a focus on speed and conversion features.",
-        tags: ["React", "Stripe", "Framer Motion"],
-        link: "#",
-        github: "#"
-    },
-    {
-        title: "TaskFlow",
-        description: "Productivity application helping teams manage workflows efficiently.",
-        tags: ["Vue", "Firebase", "Pinia"],
-        link: "#",
-        github: "#"
-    },
-    {
-        title: "Portfolio v1",
-        description: "Previous iteration of my personal portfolio showcasing early work.",
-        tags: ["HTML/CSS", "JavaScript"],
-        link: "#",
-        github: "#"
-    }
-]
+import { workHistory } from "@/lib/data"
+import Link from "next/link"
+import { ArrowUpRight, Download } from "lucide-react"
 
 export default function Work() {
     return (
-        <div className="container mx-auto max-w-6xl px-4 py-12 sm:px-8">
+        <div className="container mx-auto max-w-4xl px-4 py-12 sm:px-8">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 className="mb-12 space-y-4"
             >
-                <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">Selected Work</h1>
+                <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">Work History</h1>
                 <p className="max-w-2xl text-lg text-muted-foreground">
-                    A collection of projects exploring design, development, and user experience.
+                    A timeline of my professional experience and projects.
                 </p>
             </motion.div>
 
-            <div className="grid gap-8 md:grid-cols-2">
-                {projects.map((project, index) => (
+            <div className="space-y-8">
+                {workHistory.map((work, index) => (
                     <motion.div
-                        key={project.title}
+                        key={work.slug}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="group relative flex flex-col justify-between overflow-hidden rounded-lg border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
                     >
-                        <div className="space-y-4">
-                            <div className="flex items-center justify-between">
-                                <h3 className="text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
-                                    {project.title}
-                                </h3>
-                                <div className="flex gap-4">
-                                    <a href={project.github} className="text-muted-foreground hover:text-foreground transition-colors">
-                                        <Github size={20} />
-                                    </a>
-                                    <a href={project.link} className="text-muted-foreground hover:text-foreground transition-colors">
-                                        <ExternalLink size={20} />
-                                    </a>
+                        <Link
+                            href={`/work/${work.slug}`}
+                            className="group block rounded-lg border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
+                        >
+                            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                                <div className="space-y-2">
+                                    <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors flex items-center gap-2">
+                                        {work.company}
+                                        <ArrowUpRight size={20} className="opacity-0 -translate-y-1 translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0" />
+                                    </h3>
+                                    <div className="flex flex-wrap gap-2 text-sm font-medium text-muted-foreground">
+                                        <span>{work.position}</span>
+                                        <span>•</span>
+                                        <span>{work.city}</span>
+                                    </div>
+                                    <p className="text-muted-foreground">{work.description}</p>
+                                    <div className="pt-2 flex flex-wrap gap-2">
+                                        {work.tags.map((tag) => (
+                                            <span key={tag} className="rounded-full bg-secondary/10 px-2.5 py-0.5 text-xs font-medium text-secondary-foreground bg-secondary">
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                                <div className="shrink-0 text-sm font-medium text-muted-foreground whitespace-nowrap">
+                                    {work.startDate} - {work.endDate}
                                 </div>
                             </div>
-                            <p className="text-muted-foreground">{project.description}</p>
-                        </div>
-
-                        <div className="mt-8 flex flex-wrap gap-2">
-                            {project.tags.map((tag) => (
-                                <span key={tag} className="rounded-full bg-secondary/10 px-3 py-1 text-xs font-medium text-secondary-foreground">
-                                    {tag}
-                                </span>
-                            ))}
-                        </div>
+                        </Link>
                     </motion.div>
                 ))}
             </div>
+
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="mt-16 flex justify-center"
+            >
+                <a
+                    href="/resume.pdf"
+                    target="_blank"
+                    className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
+                >
+                    <Download size={20} />
+                    Download Resume
+                </a>
+            </motion.div>
         </div>
     )
 }
