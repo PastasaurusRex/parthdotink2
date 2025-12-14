@@ -14,7 +14,7 @@ export default function Work() {
                 transition={{ duration: 0.5 }}
                 className="mb-12 space-y-6"
             >
-                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">Work History</h1>
                     <a
                         href="/resume.pdf"
