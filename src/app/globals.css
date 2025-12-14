@@ -142,6 +142,8 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    corner-shape: continuous;
+    --corner-smoothing: 0.6;
   }
 
   :root {
@@ -160,5 +162,19 @@
     @apply bg-background text-foreground font-sans;
     font-family: Inter, sans-serif;
     letter-spacing: -0.02em;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
   }
 }

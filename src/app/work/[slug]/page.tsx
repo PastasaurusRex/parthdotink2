@@ -1,7 +1,7 @@
 import { workHistory } from "@/lib/data";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, MapPin, Calendar, Briefcase } from "lucide-react";
+import { ArrowLeft, MapPin, Calendar, Briefcase, ExternalLink } from "lucide-react";
 import { Metadata } from "next";
 
 export async function generateStaticParams() {
@@ -51,6 +51,14 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
                             <Calendar size={18} />
                             <span>{work.startDate} - {work.endDate}</span>
                         </div>
+                        {work.website && (
+                            <div className="flex items-center gap-2">
+                                <ExternalLink size={18} />
+                                <a href={work.website} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors underline decoration-muted-foreground/30 underline-offset-4 hover:decoration-foreground">
+                                    {work.website.replace(/^https?:\/\//, '')}
+                                </a>
+                            </div>
+                        )}
                     </div>
                 </div>
 

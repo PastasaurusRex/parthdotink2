@@ -12,12 +12,32 @@ export default function Work() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="mb-12 space-y-4"
+                className="mb-12 space-y-6"
             >
-                <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">Work History</h1>
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+                    <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">Work History</h1>
+                    <a
+                        href="/resume.pdf"
+                        target="_blank"
+                        className="hidden sm:inline-flex shrink-0 items-center justify-center gap-2 rounded-md bg-[#173448] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#173448]/90"
+                    >
+                        <Download size={18} />
+                        Download Resume
+                    </a>
+                </div>
+
                 <p className="max-w-2xl text-lg text-muted-foreground">
                     A timeline of my professional experience and projects.
                 </p>
+
+                <a
+                    href="/resume.pdf"
+                    target="_blank"
+                    className="sm:hidden inline-flex shrink-0 items-center justify-center gap-2 rounded-md bg-[#173448] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#173448]/90"
+                >
+                    <Download size={18} />
+                    Download Resume
+                </a>
             </motion.div>
 
             <div className="space-y-8">
@@ -61,21 +81,7 @@ export default function Work() {
                 ))}
             </div>
 
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
-                className="mt-16 flex justify-center"
-            >
-                <a
-                    href="/resume.pdf"
-                    target="_blank"
-                    className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
-                >
-                    <Download size={20} />
-                    Download Resume
-                </a>
-            </motion.div>
+
         </div>
     )
 }

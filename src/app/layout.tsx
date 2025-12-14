@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Evernaut.",
   description: "Minimalist portfolio",
 };
 

@@ -9,6 +9,7 @@ export interface WorkItem {
     content: string; // HTML or Markdown content for the full page
     tags: string[];
     link?: string;
+    website?: string;
 }
 
 export const workHistory: WorkItem[] = [
@@ -29,7 +30,8 @@ export const workHistory: WorkItem[] = [
             </ul>
         `,
         tags: ["Next.js", "Tailwind", "D3.js"],
-        link: "#"
+        link: "#",
+        website: "https://projectalpha.com"
     },
     {
         slug: "neon-commerce",
@@ -43,7 +45,8 @@ export const workHistory: WorkItem[] = [
             <p>Designed and developed a headless e-commerce theme. Focused on mobile-first design principles and accessibility standards.</p>
         `,
         tags: ["React", "Stripe", "Framer Motion"],
-        link: "#"
+        link: "#",
+        website: "https://neoncommerce.io"
     },
     {
         slug: "taskflow",
@@ -57,7 +60,8 @@ export const workHistory: WorkItem[] = [
             <p>Built a collaborative task management tool from scratch. Handled both backend API design in Node.js and frontend state management with Pinia.</p>
         `,
         tags: ["Vue", "Firebase", "Pinia"],
-        link: "#"
+        link: "#",
+        website: "https://taskflow.app"
     },
     {
         slug: "portfolio-v1",
@@ -71,6 +75,7 @@ export const workHistory: WorkItem[] = [
             <p>My first foray into professional web development. Created bespoke websites for local small businesses.</p>
         `,
         tags: ["HTML/CSS", "JavaScript"],
-        link: "#"
+        link: "#",
+        website: "https://v1.parth.ink"
     }
 ];

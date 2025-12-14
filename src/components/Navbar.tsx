@@ -22,7 +22,7 @@ export function Navbar() {
         <nav className="fixed top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
             <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-8">
                 <Link href="/" className="text-xl font-bold tracking-tight text-foreground">
-                    Parth<span className="text-accent">.</span>
+                    Evernaut<span className="text-accent">.</span>
                 </Link>
 
                 {/* Desktop Nav */}
