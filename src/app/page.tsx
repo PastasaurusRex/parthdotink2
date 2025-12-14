@@ -1,34 +1,76 @@
 "use client"
 
 import Link from "next/link"
-import { motion } from "motion/react"
+import { motion, AnimatePresence } from "motion/react"
 import { ArrowRight, ArrowUpRight as ArrowArrowUpRight } from "lucide-react"
 import { workHistory } from "@/lib/data"
+import { useState, useEffect } from "react"
 
+const roles = [
+  "storyteller",
+  "media consumer",
+  "brand strategist",
+  "analyst",
+  "production lead",
+  "project manager",
+  "creative director",
+  "jack of many trades",
+]
 
 export default function Home() {
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % roles.length)
+    }, 1250)
+    return () => clearInterval(timer)
+  }, [])
+
+  const article = roles[index].match(/^[aeiou]/i) ? "an" : "a"
+
   return (
-    <div className="flex min-h-[calc(100vh-4rem)] flex-col justify-center px-4 sm:px-8">
-      <div className="container mx-auto max-w-4xl space-y-8">
+    <div className="flex-1 flex flex-col justify-center px-4 sm:px-8">
+      <div className="container mx-auto max-w-4xl space-y-6 md:space-y-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="space-y-4"
+          className="space-y-2 md:space-y-4"
         >
-          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
-            <span className="block text-primary">Digital Designer</span>
-            <span className="block text-foreground">& Developer.</span>
+          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl">
+            Hello, there!
           </h1>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="max-w-xl text-lg text-muted-foreground sm:text-xl md:text-2xl"
+            className="flex flex-wrap items-center gap-2 text-xl text-muted-foreground sm:text-2xl md:text-3xl min-h-[2rem]"
           >
-            I create minimal, functional, and aesthetically pleasing digital experiences that live on the internet.
-          </motion.p>
+            <span className="relative">
+              I&apos;m{" "}
+              <span className="relative ml-1">
+                Parth
+                <img src="/squiggle.svg" alt="" className="absolute -bottom-2 left-0 w-full h-[0.3em]" />
+              </span>
+              , {article}
+            </span>
+            <div className="relative inline-block min-w-[10px]">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3 }}
+                  className="font-medium text-muted-foreground italic inline-block"
+                >
+                  {roles[index]}.
+                </motion.span>
+              </AnimatePresence>
+            </div>
+          </motion.div>
         </motion.div>
 
         <motion.div
@@ -37,9 +79,9 @@ export default function Home() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="space-y-6"
         >
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-3">
             {/* Teaser Cards */}
-            {workHistory.slice(0, 2).map((work) => (
+            {workHistory.slice(0, 3).map((work) => (
               <Link
                 key={work.slug}
                 href={`/work/${work.slug}`}
@@ -67,14 +109,14 @@ export default function Home() {
             href="/work"
             className="inline-flex h-12 items-center justify-center rounded-sm bg-primary px-8 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
           >
-            View All Work
+            View all work
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
           <Link
             href="/contact"
             className="inline-flex h-12 items-center justify-center rounded-sm border border-input bg-background px-8 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
           >
-            Contact Me
+            Contact me
           </Link>
         </motion.div>
       </div>

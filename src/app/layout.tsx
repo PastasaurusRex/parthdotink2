@@ -19,9 +19,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://rsms.me/" />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       </head>
-      <body className="font-sans antialiased bg-background text-foreground">
+      <body className="font-sans antialiased bg-background text-foreground flex flex-col min-h-screen">
         <Navbar />
-        <main className="min-h-screen pt-16">
+        <main className="flex-1 pt-16 w-full flex flex-col">
           {children}
         </main>
         <Footer />

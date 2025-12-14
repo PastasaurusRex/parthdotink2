@@ -32,8 +32,8 @@ export default function About() {
                 <div className="mt-8 pt-8 border-t border-border/40">
                     <p className="text-muted-foreground italic flex items-center gap-2">
                         <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#4a90e2] opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#4a90e2]"></span>
                         </span>
                         Construction in progress...
                     </p>

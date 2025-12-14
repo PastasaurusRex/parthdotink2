@@ -22,7 +22,7 @@ export default function Work() {
                         className="hidden sm:inline-flex shrink-0 items-center justify-center gap-2 rounded-md bg-[#173448] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#173448]/90"
                     >
                         <Download size={18} />
-                        Download Resume
+                        Download resume
                     </a>
                 </div>
 
@@ -36,7 +36,7 @@ export default function Work() {
                     className="sm:hidden inline-flex shrink-0 items-center justify-center gap-2 rounded-md bg-[#173448] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#173448]/90"
                 >
                     <Download size={18} />
-                    Download Resume
+                    Download resume
                 </a>
             </motion.div>
 
@@ -66,7 +66,7 @@ export default function Work() {
                                     <p className="text-muted-foreground">{work.description}</p>
                                     <div className="pt-2 flex flex-wrap gap-2">
                                         {work.tags.map((tag) => (
-                                            <span key={tag} className="rounded-full bg-secondary/10 px-2.5 py-0.5 text-xs font-medium text-secondary-foreground bg-secondary">
+                                            <span key={tag} className="rounded-full bg-[#D6E6DE] px-2.5 py-0.5 text-xs font-medium text-[#123524]">
                                                 {tag}
                                             </span>
                                         ))}
