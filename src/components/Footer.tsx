@@ -16,6 +16,10 @@ export function Footer() {
                     </div>
                 </div>
 
+                <div className="text-primary font-serif font-medium text-center text-2xl">
+                    Forever. Everywhere. Evernaut.
+                </div>
+
                 <div className="flex items-center gap-6">
                     <Link href="mailto:hello@parth.ink" className="text-muted-foreground transition-colors hover:text-[#EA4335]">
                         <Mail size={20} />

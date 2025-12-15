@@ -81,7 +81,7 @@ export default function Home() {
         >
           <div className="grid gap-4 sm:grid-cols-3">
             {/* Teaser Cards */}
-            {workHistory.slice(0, 3).map((work) => (
+            {[workHistory[0], workHistory[1], workHistory[4]].map((work) => (
               <Link
                 key={work.slug}
                 href={`/work/${work.slug}`}

@@ -55,7 +55,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
                             <div className="flex items-center gap-2">
                                 <ExternalLink size={18} />
                                 <a href={work.website} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors underline decoration-muted-foreground/30 underline-offset-4 hover:decoration-foreground">
-                                    {work.website.replace(/^https?:\/\//, '')}
+                                    {work.websiteLabel || work.website.replace(/^https?:\/\//, '')}
                                 </a>
                             </div>
                         )}
@@ -71,7 +71,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
                 </div>
 
                 <div
-                    className="prose prose-lg text-muted-foreground prose-headings:text-foreground prose-strong:text-foreground max-w-none"
+                    className="space-y-6 leading-relaxed text-muted-foreground prose-headings:text-foreground prose-strong:text-foreground prose-a:text-foreground prose-a:underline prose-a:decoration-muted-foreground/30 prose-a:underline-offset-4 hover:prose-a:decoration-foreground prose-a:transition-colors"
                     dangerouslySetInnerHTML={{ __html: work.content }}
                 />
 
