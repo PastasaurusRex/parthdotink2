@@ -38,9 +38,16 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           className="space-y-2 md:space-y-4"
         >
-          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl">
-            Hello, there!
-          </h1>
+          <div className="flex items-center sm:block sm:relative">
+            <img
+              src="/salute.png"
+              alt="Salute"
+              className="w-10 h-10 mr-3 sm:mr-0 sm:absolute sm:left-0 sm:-translate-x-full sm:-ml-4 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 sm:top-1/2 sm:-translate-y-1/2 object-contain"
+            />
+            <h1 className="text-4xl font-bold text-foreground sm:text-6xl md:text-7xl lg:text-8xl">
+              Hello, there!
+            </h1>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -107,14 +114,14 @@ export default function Home() {
         >
           <Link
             href="/work"
-            className="inline-flex h-12 items-center justify-center rounded-sm bg-primary px-8 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+            className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/65 hover:text-[#16161d] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
           >
             View all work
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
           <Link
             href="/contact"
-            className="inline-flex h-12 items-center justify-center rounded-sm border border-input bg-background px-8 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+            className="inline-flex h-12 items-center justify-center rounded-full border border-[#123524] bg-background px-8 text-sm font-medium text-[#123524] transition-colors hover:bg-[#D6E6DE] hover:text-[#123524] hover:border-[#D6E6DE] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
           >
             Contact me
           </Link>

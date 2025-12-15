@@ -70,7 +70,7 @@ export default function Contact() {
 
                     <button
                         type="submit"
-                        className="inline-flex h-12 w-full items-center justify-center rounded-sm bg-primary px-8 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                        className="inline-flex h-12 w-full items-center justify-center rounded-full bg-primary px-8 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/65 hover:text-[#16161d] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
                     >
                         Send message
                         <Send className="ml-2 h-4 w-4" />

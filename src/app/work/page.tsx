@@ -19,7 +19,7 @@ export default function Work() {
                     <a
                         href="/resume.pdf"
                         target="_blank"
-                        className="hidden sm:inline-flex shrink-0 items-center justify-center gap-2 rounded-md bg-[#173448] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#173448]/90"
+                        className="hidden sm:inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#173448] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#4a90e2] hover:text-[#173448]"
                     >
                         <Download size={18} />
                         Download resume
@@ -33,7 +33,7 @@ export default function Work() {
                 <a
                     href="/resume.pdf"
                     target="_blank"
-                    className="sm:hidden inline-flex shrink-0 items-center justify-center gap-2 rounded-md bg-[#173448] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#173448]/90"
+                    className="sm:hidden inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#173448] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#4a90e2] hover:text-[#173448]"
                 >
                     <Download size={18} />
                     Download resume

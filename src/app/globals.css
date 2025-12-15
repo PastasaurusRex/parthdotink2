@@ -149,8 +149,8 @@
 
   :root {
     font-family: Inter, sans-serif;
-    font-feature-settings: 'liga' 1, 'calt' 1;
-    /* fix for Chrome */
+    font-feature-settings: 'liga' 1, 'calt' 1, 'ss03' 1;
+    /* ss03: Round quotes & commas */
   }
 
   @supports (font-variation-settings: normal) {
