@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: 'Privacy Policy | Evernaut.',
-    description: 'Privacy Policy for Evernaut.',
+    title: 'Privacy Policy | parth.ink',
+    description: 'Privacy Policy for parth.ink',
 }
 
 export default function Privacy() {

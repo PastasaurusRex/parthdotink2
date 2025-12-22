@@ -16,28 +16,32 @@ export default function Work() {
             >
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">Work History</h1>
-                    <a
-                        href="/resume.pdf"
+                    <motion.a
+                        whileTap={{ scale: 0.95 }}
+                        href="/parth%20shahanand_resume.pdf"
+                        download="parth_shahanand_resume.pdf"
                         target="_blank"
-                        className="hidden sm:inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#173448] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#4a90e2] hover:text-[#173448]"
+                        className="hidden sm:inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-sky-950 px-6 py-3 text-sm font-medium text-amber-50 transition-colors hover:bg-sky-600 hover:text-white"
                     >
                         <Download size={18} />
                         Download resume
-                    </a>
+                    </motion.a>
                 </div>
 
                 <p className="max-w-2xl text-lg text-muted-foreground">
                     A timeline of my professional experience and projects.
                 </p>
 
-                <a
-                    href="/resume.pdf"
+                <motion.a
+                    whileTap={{ scale: 0.95 }}
+                    href="/parth%20shahanand_resume.pdf"
+                    download="parth_shahanand_resume.pdf"
                     target="_blank"
-                    className="sm:hidden inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#173448] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#4a90e2] hover:text-[#173448]"
+                    className="sm:hidden inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-sky-950 px-6 py-3 text-sm font-medium text-amber-50 transition-colors hover:bg-sky-600 hover:text-white"
                 >
                     <Download size={18} />
                     Download resume
-                </a>
+                </motion.a>
             </motion.div>
 
             <div className="space-y-8">
@@ -66,7 +70,7 @@ export default function Work() {
                                     <p className="text-muted-foreground">{work.description}</p>
                                     <div className="pt-2 flex flex-wrap gap-2">
                                         {work.tags.map((tag) => (
-                                            <span key={tag} className="rounded-full bg-[#D6E6DE] px-2.5 py-0.5 text-xs font-medium text-[#123524]">
+                                            <span key={tag} className="rounded-full bg-emerald-500/25 px-2.5 py-0.5 text-xs font-medium text-emerald-950">
                                                 {tag}
                                             </span>
                                         ))}

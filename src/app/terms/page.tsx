@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-    title: 'Terms of Service | Evernaut.',
-    description: 'Terms of Service for Evernaut.',
+    title: 'Terms of Service | parth.ink',
+    description: 'Terms of Service for parth.ink',
 }
 
 export default function Terms() {

@@ -11,7 +11,6 @@ const navItems = [
     { name: "Home", href: "/" },
     { name: "Work", href: "/work" },
     { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
 ]
 
 export function Navbar() {
@@ -22,7 +21,9 @@ export function Navbar() {
         <nav className="fixed top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
             <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-8">
                 <Link href="/" className="text-xl font-serif font-medium tracking-tight text-secondary">
-                    Evernaut<span className="text-primary">.</span>
+                    <span className="text-emerald-700 font-sans">parth</span>
+                    <span className="text-amber-500 font-sans">.</span>
+                    <span className="text-emerald-700 font-serif">INK</span>
                 </Link>
 
                 {/* Desktop Nav */}
@@ -42,12 +43,13 @@ export function Navbar() {
                 </div>
 
                 {/* Mobile Menu Toggle */}
-                <button
+                <motion.button
+                    whileTap={{ scale: 0.95 }}
                     className="md:hidden p-2 text-foreground rounded-full"
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     {isOpen ? <X size={24} /> : <Menu size={24} />}
-                </button>
+                </motion.button>
             </div>
 
             {/* Mobile Nav */}
@@ -77,6 +79,6 @@ export function Navbar() {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </nav>
+        </nav >
     )
 }

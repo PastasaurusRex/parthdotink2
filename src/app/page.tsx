@@ -17,6 +17,8 @@ const roles = [
   "jack of many trades",
 ]
 
+const MotionLink = motion.create(Link)
+
 export default function Home() {
   const [index, setIndex] = useState(0)
 
@@ -112,19 +114,14 @@ export default function Home() {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="flex flex-wrap gap-4"
         >
-          <Link
+          <MotionLink
             href="/work"
-            className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/65 hover:text-[#16161d] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-sm font-medium text-primary-foreground transition-colors hover:bg-amber-300 hover:text-zinc-950 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
           >
             View all work
             <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
-          <Link
-            href="/contact"
-            className="inline-flex h-12 items-center justify-center rounded-full border border-[#123524] bg-background px-8 text-sm font-medium text-[#123524] transition-colors hover:bg-[#D6E6DE] hover:text-[#123524] hover:border-[#D6E6DE] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-          >
-            Contact me
-          </Link>
+          </MotionLink>
         </motion.div>
       </div>
     </div>

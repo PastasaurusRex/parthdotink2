@@ -64,7 +64,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
 
                 <div className="flex flex-wrap gap-2">
                     {work.tags.map((tag) => (
-                        <span key={tag} className="rounded-full bg-[#D6E6DE] px-3 py-1 text-sm font-medium text-[#123524]">
+                        <span key={tag} className="rounded-full bg-emerald-500/25 px-3 py-1 text-sm font-medium text-emerald-950">
                             {tag}
                         </span>
                     ))}
