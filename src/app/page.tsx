@@ -117,10 +117,10 @@ export default function Home() {
           <MotionLink
             href="/work"
             whileTap={{ scale: 0.95 }}
-            className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-sm font-medium text-primary-foreground transition-colors hover:bg-amber-300 hover:text-zinc-950 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+            className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-sm font-medium text-primary-foreground transition-colors hover:bg-amber-300 hover:text-zinc-950 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring group"
           >
             View all work
-            <ArrowRight className="ml-2 h-4 w-4" />
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </MotionLink>
         </motion.div>
       </div>

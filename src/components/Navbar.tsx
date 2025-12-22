@@ -52,31 +52,43 @@ export function Navbar() {
                 </motion.button>
             </div>
 
-            {/* Mobile Nav */}
+            {/* Mobile Nav - Flyout */}
             <AnimatePresence>
                 {isOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden border-b border-border/40 bg-background"
-                    >
-                        <div className="flex flex-col gap-4 p-8">
-                            {navItems.map((item) => (
-                                <Link
-                                    key={item.href}
-                                    href={item.href}
-                                    onClick={() => setIsOpen(false)}
-                                    className={cn(
-                                        "text-lg font-medium transition-colors hover:text-primary",
-                                        pathname === item.href ? "text-foreground" : "text-muted-foreground"
-                                    )}
-                                >
-                                    {item.name}
-                                </Link>
-                            ))}
-                        </div>
-                    </motion.div>
+                    <>
+                        {/* Backdrop */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="md:hidden fixed inset-0 bg-black/20 z-40"
+                            onClick={() => setIsOpen(false)}
+                        />
+                        {/* Flyout Panel */}
+                        <motion.div
+                            initial={{ opacity: 0, x: "100%" }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: "100%" }}
+                            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                            className="md:hidden fixed top-16 right-4 z-50 w-[80%] max-w-xs bg-background border border-border/40 rounded-2xl shadow-2xl shadow-black/25"
+                        >
+                            <div className="flex flex-col gap-4 p-6">
+                                {navItems.map((item) => (
+                                    <Link
+                                        key={item.href}
+                                        href={item.href}
+                                        onClick={() => setIsOpen(false)}
+                                        className={cn(
+                                            "text-lg font-medium transition-colors hover:text-primary",
+                                            pathname === item.href ? "text-foreground" : "text-muted-foreground"
+                                        )}
+                                    >
+                                        {item.name}
+                                    </Link>
+                                ))}
+                            </div>
+                        </motion.div>
+                    </>
                 )}
             </AnimatePresence>
         </nav >
