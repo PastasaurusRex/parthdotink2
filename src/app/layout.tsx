@@ -15,7 +15,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Hi, I'm Parth!",
     description: "And this is my website.",
-    images: ['/ogimage.jpg'],
+    images: [{
+      url: '/ogimage.jpg',
+      width: 1200,
+      height: 630,
+    }],
   },
 };
 

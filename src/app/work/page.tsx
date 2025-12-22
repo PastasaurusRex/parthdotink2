@@ -3,8 +3,7 @@
 import { motion } from "motion/react"
 import { workHistory } from "@/lib/data"
 import Link from "next/link"
-import { ArrowUpRight } from "lucide-react"
-import { DownloadIcon } from "@/components/ui/download"
+import { ArrowUpRight, Download } from "lucide-react"
 
 export default function Work() {
     return (
@@ -22,9 +21,9 @@ export default function Work() {
                         href="/parth%20shahanand_resume.pdf"
                         download="parth_shahanand_resume.pdf"
                         target="_blank"
-                        className="hidden sm:inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-sky-950 px-6 py-3 text-sm font-medium text-amber-50 transition-colors hover:bg-sky-600 hover:text-white group"
+                        className="hidden sm:inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-sky-950 px-6 py-3 text-sm font-medium text-amber-50 transition-colors hover:bg-sky-600 hover:text-white"
                     >
-                        <DownloadIcon className="h-[18px] w-[18px]" size={18} />
+                        <Download size={18} />
                         Download resume
                     </motion.a>
                 </div>
@@ -38,9 +37,9 @@ export default function Work() {
                     href="/parth%20shahanand_resume.pdf"
                     download="parth_shahanand_resume.pdf"
                     target="_blank"
-                    className="sm:hidden inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-sky-950 px-6 py-3 text-sm font-medium text-amber-50 transition-colors hover:bg-sky-600 hover:text-white group"
+                    className="sm:hidden inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-sky-950 px-6 py-3 text-sm font-medium text-amber-50 transition-colors hover:bg-sky-600 hover:text-white"
                 >
-                    <DownloadIcon className="h-[18px] w-[18px]" size={18} />
+                    <Download size={18} />
                     Download resume
                 </motion.a>
             </motion.div>
