@@ -11,16 +11,7 @@ const sourceSerif = Source_Serif_4({
 
 export const metadata: Metadata = {
   title: "Hi, I'm Parth!",
-  description: "Minimalist portfolio",
-  openGraph: {
-    title: "Hi, I'm Parth!",
-    description: "And this is my website.",
-    images: [{
-      url: '/ogimage.jpg',
-      width: 1200,
-      height: 630,
-    }],
-  },
+  description: "And this is my website.",
 };
 
 export default function RootLayout({
