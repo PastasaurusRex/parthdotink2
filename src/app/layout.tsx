@@ -12,9 +12,6 @@ const sourceSerif = Source_Serif_4({
 export const metadata: Metadata = {
   title: "Hi, I'm Parth!",
   description: "Minimalist portfolio",
-  icons: {
-    icon: '/favicon.png',
-  },
 };
 
 export default function RootLayout({
