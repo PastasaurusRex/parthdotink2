@@ -95,7 +95,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
                                         <Link href={`/work/${nextWork.slug}`} className="group flex flex-col items-start gap-2 text-left">
                                             <span className="text-sm text-muted-foreground">Next</span>
                                             <div className="flex items-center gap-3">
-                                                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border transition-colors group-hover:border-foreground group-hover:bg-foreground group-hover:text-background text-foreground">
+                                                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-[1.5px] border-border transition-colors group-hover:border-foreground group-hover:bg-foreground group-hover:text-background text-foreground">
                                                     <ArrowLeft size={16} />
                                                 </div>
                                                 <span className="text-xl font-medium text-foreground group-hover:underline decoration-border underline-offset-4 group-hover:decoration-foreground transition-all line-clamp-1">
@@ -113,7 +113,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
                                         <Link href={`/work/${prevWork.slug}`} className="group flex flex-col items-end gap-2 text-right">
                                             <span className="text-sm text-muted-foreground">Previous</span>
                                             <div className="flex items-center gap-3 flex-row-reverse">
-                                                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border transition-colors group-hover:border-foreground group-hover:bg-foreground group-hover:text-background text-foreground">
+                                                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-[1.5px] border-border transition-colors group-hover:border-foreground group-hover:bg-foreground group-hover:text-background text-foreground">
                                                     <ArrowArrowRight size={16} />
                                                 </div>
                                                 <span className="text-xl font-medium text-foreground group-hover:underline decoration-border underline-offset-4 group-hover:decoration-foreground transition-all line-clamp-1">

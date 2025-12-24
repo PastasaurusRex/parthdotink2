@@ -29,7 +29,7 @@ export default function Terms() {
                 </p>
 
                 <p>
-                    By using our website, you hereby consent to our disclaimer and agree to its terms, which includes having read the <Link href="/privacy" className="text-foreground underline decoration-muted-foreground/30 hover:decoration-foreground transition-colors">privacy policy</Link>.
+                    By using our website, you hereby consent to our disclaimer and agree to its terms, which includes having read the <Link href="/privacy" className="text-sky-600 font-medium underline decoration-sky-600/30 hover:decoration-sky-600 transition-colors">privacy policy</Link>.
                 </p>
             </div>
         </div>

@@ -61,31 +61,43 @@ export function Navbar() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="md:hidden fixed inset-0 bg-black/20 z-40"
+                            className="md:hidden fixed inset-0 bg-transparent z-40"
                             onClick={() => setIsOpen(false)}
                         />
                         {/* Flyout Panel */}
                         <motion.div
-                            initial={{ opacity: 0, x: "100%" }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: "100%" }}
-                            transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                            className="md:hidden fixed top-16 right-4 z-50 w-[80%] max-w-xs bg-background border border-border/40 rounded-2xl shadow-2xl shadow-black/25"
+                            initial={{ opacity: 0, scale: 0.5, originX: "right", originY: "top" }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.5 }}
+                            transition={{ type: "spring", damping: 25, stiffness: 300, mass: 0.8 }}
+                            style={{ transformOrigin: "top right" }}
+                            className="md:hidden fixed top-3 right-4 z-50 w-48 bg-background border-[1.5px] border-border rounded-2xl shadow-2xl shadow-black/25 overflow-hidden"
                         >
-                            <div className="flex flex-col gap-4 p-6">
-                                {navItems.map((item) => (
-                                    <Link
-                                        key={item.href}
-                                        href={item.href}
+                            <div className="flex flex-col p-4 pt-2">
+                                <div className="flex items-center justify-end mb-1">
+                                    <motion.button
+                                        whileTap={{ scale: 0.9 }}
                                         onClick={() => setIsOpen(false)}
-                                        className={cn(
-                                            "text-lg font-medium transition-colors hover:text-primary",
-                                            pathname === item.href ? "text-foreground" : "text-muted-foreground"
-                                        )}
+                                        className="p-2 -mr-2 text-foreground rounded-full"
                                     >
-                                        {item.name}
-                                    </Link>
-                                ))}
+                                        <X size={20} />
+                                    </motion.button>
+                                </div>
+                                <div className="flex flex-col">
+                                    {navItems.map((item) => (
+                                        <Link
+                                            key={item.href}
+                                            href={item.href}
+                                            onClick={() => setIsOpen(false)}
+                                            className={cn(
+                                                "text-lg font-medium transition-colors hover:text-primary py-1.5",
+                                                pathname === item.href ? "text-foreground" : "text-muted-foreground"
+                                            )}
+                                        >
+                                            {item.name}
+                                        </Link>
+                                    ))}
+                                </div>
                             </div>
                         </motion.div>
                     </>

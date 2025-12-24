@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react"
 import { ArrowRight, ArrowUpRight as ArrowArrowUpRight } from "lucide-react"
 import { workHistory } from "@/lib/data"
 import { useState, useEffect } from "react"
+import { cn } from "@/lib/utils"
 
 const roles = [
   "storyteller",
@@ -32,7 +33,7 @@ export default function Home() {
   const article = roles[index].match(/^[aeiou]/i) ? "an" : "a"
 
   return (
-    <div className="flex-1 flex flex-col justify-center px-4 sm:px-8">
+    <div className="flex-1 flex flex-col justify-start md:justify-center py-12 md:py-0 px-4 sm:px-8">
       <div className="container mx-auto max-w-4xl space-y-6 md:space-y-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -90,21 +91,23 @@ export default function Home() {
         >
           <div className="grid gap-4 sm:grid-cols-3">
             {/* Teaser Cards */}
-            {[workHistory[0], workHistory[1], workHistory[4]].map((work) => (
-              <Link
-                key={work.slug}
-                href={`/work/${work.slug}`}
-                className="group block rounded-lg border border-border bg-card p-4 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
-              >
-                <div className="space-y-2">
-                  <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors flex items-center gap-2">
-                    {work.company}
-                    <ArrowArrowUpRight size={16} className="opacity-0 -translate-y-1 translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0" />
-                  </h3>
-                  <p className="text-sm text-muted-foreground line-clamp-2">{work.description}</p>
-                </div>
-              </Link>
-            ))}
+            {[workHistory[0], workHistory[1], workHistory[4]].map((work) => {
+              return (
+                <Link
+                  key={work.slug}
+                  href={`/work/${work.slug}`}
+                  className="group block rounded-lg border-[1.5px] border-border bg-card p-4 transition-all hover:bg-primary hover:border-foreground hover:shadow-[6px_6px_0_0_var(--foreground)] hover:-translate-x-[3px] hover:-translate-y-[3px]"
+                >
+                  <div className="space-y-2">
+                    <h3 className="font-semibold text-foreground transition-colors flex items-center gap-2 group-hover:text-foreground">
+                      {work.company}
+                      <ArrowArrowUpRight size={16} className="opacity-0 -translate-y-1 translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0" />
+                    </h3>
+                    <p className="text-sm line-clamp-2 transition-colors text-muted-foreground group-hover:text-foreground">{work.description}</p>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </motion.div>
 
@@ -117,7 +120,7 @@ export default function Home() {
           <MotionLink
             href="/work"
             whileTap={{ scale: 0.95 }}
-            className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-sm font-medium text-primary-foreground transition-colors hover:bg-amber-300 hover:text-zinc-950 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring group"
+            className="inline-flex h-12 items-center justify-center rounded-full border-[1.5px] border-border bg-primary px-8 text-sm font-medium text-primary-foreground transition-all hover:bg-amber-300 hover:text-zinc-950 hover:shadow-[4px_4px_0_0_var(--foreground)] hover:-translate-x-[2px] hover:-translate-y-[2px] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring group"
           >
             View all work
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
