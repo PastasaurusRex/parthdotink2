@@ -47,7 +47,7 @@ export default function Home() {
               alt="Salute"
               className="w-10 h-10 mr-3 sm:mr-0 sm:absolute sm:left-0 sm:-translate-x-full sm:-ml-4 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 sm:top-1/2 sm:-translate-y-1/2 object-contain"
             />
-            <h1 className="text-4xl font-bold text-foreground sm:text-6xl md:text-7xl lg:text-8xl">
+            <h1 className="text-4xl font-bold font-serif text-foreground sm:text-6xl md:text-7xl lg:text-8xl">
               Hello, there!
             </h1>
           </div>

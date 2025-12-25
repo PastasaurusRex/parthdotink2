@@ -12,7 +12,7 @@ export default function About() {
                 className="space-y-12"
             >
                 <div className="space-y-6">
-                    <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">About Me</h1>
+                    <h1 className="text-4xl font-bold font-serif tracking-tight text-foreground sm:text-5xl">About Me</h1>
                     <div className="space-y-6 leading-relaxed text-muted-foreground prose-headings:text-foreground prose-strong:text-foreground">
                         <p>
                             “Whatever you now find weird, ugly, uncomfortable and nasty about a new medium will surely become its signature. CD distortion, the jitteriness of digital video, the crap sound of 8-bit - all of these will be cherished and emulated as soon as they can be avoided. It’s the sound of failure: so much modern art is the sound of things going out of control, of a medium pushing to its limits and breaking apart.

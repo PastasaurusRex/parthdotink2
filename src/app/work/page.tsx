@@ -15,7 +15,7 @@ export default function Work() {
                 className="mb-12 space-y-6"
             >
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                    <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">Work History</h1>
+                    <h1 className="text-4xl font-bold font-serif tracking-tight text-foreground sm:text-5xl">Work History</h1>
                     <motion.a
                         whileTap={{ scale: 0.95 }}
                         href="/parth%20shahanand_resume.pdf"

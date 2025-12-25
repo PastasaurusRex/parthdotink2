@@ -37,7 +37,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
 
             <div className="space-y-8">
                 <div className="space-y-4">
-                    <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">{work.company}</h1>
+                    <h1 className="text-4xl font-serif font-bold tracking-tight text-foreground sm:text-5xl">{work.company}</h1>
                     <div className="flex flex-wrap gap-4 text-muted-foreground">
                         <div className="flex items-center gap-2">
                             <Briefcase size={18} />

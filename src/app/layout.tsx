@@ -1,12 +1,26 @@
 import type { Metadata } from "next";
 import { Source_Serif_4 } from "next/font/google";
+import localFont from "next/font/local";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { BackToTop } from "@/components/BackToTop";
 import "./globals.css";
 
 const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
+  variable: "--font-serif-fallback",
+});
+
+const matter = localFont({
+  src: "./MatterCollectionVF-TRIAL.woff2",
+  variable: "--font-sans",
+  weight: "100 900",
+});
+
+const serrif = localFont({
+  src: "./SerrifCollectionVF-TRIAL.woff2",
   variable: "--font-serif",
+  weight: "100 900",
 });
 
 export const metadata: Metadata = {
@@ -48,11 +62,12 @@ export default function RootLayout({
         <link rel="preconnect" href="https://rsms.me/" />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       </head>
-      <body className={`${sourceSerif.variable} font-sans antialiased bg-background text-foreground flex flex-col min-h-screen`}>
+      <body className={`${matter.variable} ${serrif.variable} ${sourceSerif.variable} font-sans antialiased bg-background text-foreground flex flex-col min-h-screen`}>
         <Navbar />
         <main className="flex-1 pt-16 w-full flex flex-col">
           {children}
         </main>
+        <BackToTop />
         <Footer />
       </body>
     </html>
