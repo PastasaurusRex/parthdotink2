@@ -12,13 +12,13 @@ const sourceSerif = Source_Serif_4({
 });
 
 const matter = localFont({
-  src: "./MatterCollectionVF-TRIAL.woff2",
+  src: "../../public/assets/fonts/MatterCollectionVF-TRIAL.woff2",
   variable: "--font-sans",
   weight: "100 900",
 });
 
 const serrif = localFont({
-  src: "./SerrifCollectionVF-TRIAL.woff2",
+  src: "../../public/assets/fonts/SerrifCollectionVF-TRIAL.woff2",
   variable: "--font-serif",
   weight: "100 900",
 });
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: 'parth.ink',
     images: [
       {
-        url: '/opengraph-image.jpg',
+        url: '/assets/images/opengraph-image.jpg',
         width: 1200,
         height: 630,
         alt: "Hi, I'm Parth!",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Hi, I'm Parth!",
     description: "And this is my website.",
-    images: ['/opengraph-image.jpg'],
+    images: ['/assets/images/opengraph-image.jpg'],
   },
 };
 
@@ -58,10 +58,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://rsms.me/" />
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-      </head>
       <body className={`${matter.variable} ${serrif.variable} ${sourceSerif.variable} font-sans antialiased bg-background text-foreground flex flex-col min-h-screen`}>
         <Navbar />
         <main className="flex-1 pt-16 w-full flex flex-col">

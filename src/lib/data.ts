@@ -8,7 +8,6 @@ export interface WorkItem {
     description: string;
     content: string; // HTML or Markdown content for the full page
     tags: string[];
-    link?: string;
     website?: string;
     websiteLabel?: string;
 }

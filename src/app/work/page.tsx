@@ -18,10 +18,10 @@ export default function Work() {
                     <h1 className="text-4xl font-bold font-serif tracking-tight text-foreground sm:text-5xl">Work History</h1>
                     <motion.a
                         whileTap={{ scale: 0.95 }}
-                        href="/parth%20shahanand_resume.pdf"
-                        download="parth_shahanand_resume.pdf"
+                        href="/assets/documents/resume.pdf"
+                        download="resume.pdf"
                         target="_blank"
-                        className="hidden sm:inline-flex shrink-0 items-center justify-center gap-2 rounded-full border-[1.5px] border-border bg-sky-950 px-6 py-3 text-sm font-medium text-amber-50 transition-all hover:bg-sky-600 hover:text-white hover:shadow-[4px_4px_0_0_var(--foreground)] hover:-translate-x-[2px] hover:-translate-y-[2px]"
+                        className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full border-[1.5px] border-border bg-sky-950 px-6 py-3 text-sm font-medium text-amber-50 transition-all hover:bg-sky-600 hover:text-white hover:shadow-[4px_4px_0_0_var(--foreground)] hover:-translate-x-[2px] hover:-translate-y-[2px] w-full sm:w-auto"
                     >
                         <Download size={18} />
                         Download resume
@@ -31,17 +31,6 @@ export default function Work() {
                 <p className="max-w-2xl text-lg text-muted-foreground">
                     A timeline of my professional experience and projects.
                 </p>
-
-                <motion.a
-                    whileTap={{ scale: 0.95 }}
-                    href="/parth%20shahanand_resume.pdf"
-                    download="parth_shahanand_resume.pdf"
-                    target="_blank"
-                    className="sm:hidden inline-flex shrink-0 items-center justify-center gap-2 rounded-full border-[1.5px] border-border bg-sky-950 px-6 py-3 text-sm font-medium text-amber-50 transition-all hover:bg-sky-600 hover:text-white hover:shadow-[4px_4px_0_0_var(--foreground)] hover:-translate-x-[2px] hover:-translate-y-[2px]"
-                >
-                    <Download size={18} />
-                    Download resume
-                </motion.a>
             </motion.div>
 
             <div className="space-y-8">

@@ -17,19 +17,19 @@ export function Footer() {
                 </div>
 
                 <div className="flex items-center gap-6">
-                    <Link href="mailto:p.shahanand@gmail.com" className="text-muted-foreground transition-colors hover:text-red-600">
+                    <Link href="mailto:p.shahanand@gmail.com" className="p-2 -m-2 text-muted-foreground transition-colors hover:text-red-600">
                         <Mail size={20} />
                         <span className="sr-only">Email</span>
                     </Link>
-                    <Link href="https://instagram.com/pastasaurusrex" target="_blank" className="text-muted-foreground transition-colors hover:text-pink-600">
+                    <Link href="https://instagram.com/pastasaurusrex" target="_blank" rel="noopener noreferrer" className="p-2 -m-2 text-muted-foreground transition-colors hover:text-pink-600">
                         <Instagram size={20} />
                         <span className="sr-only">Instagram</span>
                     </Link>
-                    <Link href="https://twitter.com/pastasaurusrex" target="_blank" className="text-muted-foreground transition-colors hover:text-sky-500">
+                    <Link href="https://twitter.com/pastasaurusrex" target="_blank" rel="noopener noreferrer" className="p-2 -m-2 text-muted-foreground transition-colors hover:text-sky-500">
                         <Twitter size={20} />
                         <span className="sr-only">Twitter</span>
                     </Link>
-                    <Link href="https://linkedin.com/in/parthshahanand" target="_blank" className="text-muted-foreground transition-colors hover:text-blue-700">
+                    <Link href="https://linkedin.com/in/parthshahanand" target="_blank" rel="noopener noreferrer" className="p-2 -m-2 text-muted-foreground transition-colors hover:text-blue-700">
                         <Linkedin size={20} />
                         <span className="sr-only">LinkedIn</span>
                     </Link>

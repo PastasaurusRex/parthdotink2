@@ -1,7 +1,7 @@
 import { workHistory } from "@/lib/data";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, MapPin, Calendar, Briefcase, ExternalLink, ArrowRight as ArrowArrowRight } from "lucide-react";
+import { ArrowLeft, MapPin, Calendar, Briefcase, ExternalLink, ArrowRight } from "lucide-react";
 import { Metadata } from "next";
 
 export async function generateStaticParams() {
@@ -75,7 +75,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
                     dangerouslySetInnerHTML={{ __html: work.content }}
                 />
 
-                <div className="flex flex-col gap-8 pt-8 border-t border-border/40 sm:flex-row sm:justify-between sm:items-center">
+                <div className="flex gap-4 pt-8 border-t border-border/40 justify-between items-start sm:items-center">
                     {/* Next Project (Left) - usually implies newer/next in list, but user requested Next on Left */}
                     {/* Logic: If array is [Newest, ..., Oldest] */}
                     {/* Next Project usually means the one before this in the array (Newer) or the one after (Older)? */}
@@ -114,7 +114,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
                                             <span className="text-sm text-muted-foreground">Previous</span>
                                             <div className="flex items-center gap-3 flex-row-reverse">
                                                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-[1.5px] border-border transition-colors group-hover:border-foreground group-hover:bg-foreground group-hover:text-background text-foreground">
-                                                    <ArrowArrowRight size={16} />
+                                                    <ArrowRight size={16} />
                                                 </div>
                                                 <span className="text-xl font-medium text-foreground group-hover:underline decoration-border underline-offset-4 group-hover:decoration-foreground transition-all line-clamp-1">
                                                     {prevWork.company}

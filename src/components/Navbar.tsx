@@ -17,6 +17,11 @@ export function Navbar() {
     const [isOpen, setIsOpen] = React.useState(false)
     const pathname = usePathname()
 
+    // Automatically close mobile menu on route change
+    React.useEffect(() => {
+        setIsOpen(false)
+    }, [pathname])
+
     return (
         <nav className="fixed top-6 left-4 right-4 z-50 flex items-center justify-between p-1.5 rounded-full border border-border/40 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60 shadow-lg shadow-black/5 max-w-7xl mx-auto">
             <Link href="/" className="pl-4 pr-2 text-xl font-serif font-medium tracking-tight text-secondary transition-opacity hover:opacity-80">
@@ -28,7 +33,8 @@ export function Navbar() {
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center gap-1">
                 {navItems.map((item) => {
-                    const isActive = pathname === item.href
+                    const isActive = pathname === item.href ||
+                        (item.href !== "/" && pathname.startsWith(item.href))
                     return (
                         <Link
                             key={item.href}
@@ -40,9 +46,11 @@ export function Navbar() {
                         >
                             {isActive && (
                                 <motion.div
-                                    layoutId="active-pill"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
                                     className="absolute inset-0 bg-secondary/10 rounded-full"
-                                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                                    transition={{ duration: 0.2 }}
                                 />
                             )}
                             <span className="relative z-10">{item.name}</span>
@@ -56,6 +64,8 @@ export function Navbar() {
                 whileTap={{ scale: 0.95 }}
                 className="md:hidden p-2 text-foreground rounded-full hover:bg-muted transition-colors mr-1"
                 onClick={() => setIsOpen(!isOpen)}
+                aria-label={isOpen ? "Close menu" : "Open menu"}
+                aria-expanded={isOpen}
             >
                 {isOpen ? <X size={20} /> : <Menu size={20} />}
             </motion.button>
@@ -103,6 +113,6 @@ export function Navbar() {
                     </>
                 )}
             </AnimatePresence>
-        </nav >
+        </nav>
     )
 }

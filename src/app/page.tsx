@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { motion, AnimatePresence } from "motion/react"
-import { ArrowRight, ArrowUpRight as ArrowArrowUpRight } from "lucide-react"
+import { ArrowRight, ArrowUpRight } from "lucide-react"
 import { workHistory } from "@/lib/data"
 import { useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
@@ -43,7 +43,7 @@ export default function Home() {
         >
           <div className="flex items-center sm:block sm:relative">
             <img
-              src="/salute.png"
+              src="/assets/images/salute.png"
               alt="Salute"
               className="w-10 h-10 mr-3 sm:mr-0 sm:absolute sm:left-0 sm:-translate-x-full sm:-ml-4 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 sm:top-1/2 sm:-translate-y-1/2 object-contain"
             />
@@ -62,7 +62,7 @@ export default function Home() {
               I&apos;m{" "}
               <span className="relative ml-1">
                 Parth
-                <img src="/squiggle.svg" alt="" className="absolute -bottom-2 left-0 w-full h-[0.3em]" />
+                <img src="/assets/images/squiggle.svg" alt="" className="absolute -bottom-2 left-0 w-full h-[0.3em]" />
               </span>
               , {article}
             </span>
@@ -101,7 +101,7 @@ export default function Home() {
                   <div className="space-y-2">
                     <h3 className="font-semibold text-foreground transition-colors flex items-center gap-2 group-hover:text-foreground">
                       {work.company}
-                      <ArrowArrowUpRight size={16} className="opacity-0 -translate-y-1 translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0" />
+                      <ArrowUpRight size={16} className="opacity-0 -translate-y-1 translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0" />
                     </h3>
                     <p className="text-sm line-clamp-2 transition-colors text-muted-foreground group-hover:text-foreground">{work.description}</p>
                   </div>
