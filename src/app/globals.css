@@ -71,6 +71,7 @@
 
 .dark {
   /* Dark Mode Inversion (Zinc-950 BG, Amber-50 FG) */
+  --background: #09090b;
   /* Dark Mode: One shade darker foreground (Zinc-100ish) */
   --foreground: #ececec;
 
@@ -144,4 +145,34 @@
 
 .animate-ticker-scroll {
   animation: ticker-scroll 20s linear infinite;
+}
+
+/* View Transition: Circular Theme Switch */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 9999;
+}
+
+/* Dark mode and Light mode expand circle */
+.dark::view-transition-new(root),
+:root:not(.dark)::view-transition-new(root) {
+  animation: circle-expand 0.5s ease-out;
+}
+
+@keyframes circle-expand {
+  from {
+    clip-path: circle(0px at var(--toggle-x) var(--toggle-y));
+  }
+  to {
+    clip-path: circle(var(--toggle-radius) at var(--toggle-x) var(--toggle-y));
+  }
 }

@@ -51,20 +51,29 @@ export const metadata: Metadata = {
   },
 };
 
+import { ThemeProvider } from "@/components/theme-provider"
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${matter.variable} ${serrif.variable} ${sourceSerif.variable} font-sans antialiased bg-background text-foreground flex flex-col min-h-screen`}>
-        <Navbar />
-        <main className="flex-1 pt-16 w-full flex flex-col">
-          {children}
-        </main>
-        <BackToTop />
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <main className="flex-1 pt-16 w-full flex flex-col">
+            {children}
+          </main>
+          <BackToTop />
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

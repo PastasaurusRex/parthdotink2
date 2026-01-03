@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, MapPin, Calendar, Briefcase, ExternalLink, ArrowRight } from "lucide-react";
 import { Metadata } from "next";
+import { ClientsTicker } from "@/components/ClientsTicker";
+import { WorkTag } from "@/components/WorkTag";
 
 export async function generateStaticParams() {
     return workHistory.map((work) => ({
@@ -64,9 +66,9 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
 
                 <div className="flex flex-wrap gap-2">
                     {work.tags.map((tag) => (
-                        <span key={tag} className="rounded-full bg-emerald-500/25 px-3 py-1 text-sm font-medium text-emerald-950">
+                        <WorkTag key={tag}>
                             {tag}
-                        </span>
+                        </WorkTag>
                     ))}
                 </div>
 
@@ -74,6 +76,16 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
                     className="space-y-6 leading-relaxed text-muted-foreground prose-headings:text-foreground prose-strong:text-foreground prose-a:text-foreground prose-a:underline prose-a:decoration-muted-foreground/30 prose-a:underline-offset-4 hover:prose-a:decoration-foreground prose-a:transition-colors"
                     dangerouslySetInnerHTML={{ __html: work.content }}
                 />
+
+                {/* Clients Section - Only for CBC Sports */}
+                {work.slug === "cbc-sports" && (
+                    <div className="space-y-6 pt-4">
+                        <h2 className="text-2xl font-serif font-bold tracking-tight text-foreground">
+                            Clients
+                        </h2>
+                        <ClientsTicker />
+                    </div>
+                )}
 
                 <div className="flex gap-4 pt-8 border-t border-border/40 justify-between items-start sm:items-center">
                     {/* Next Project (Left) - usually implies newer/next in list, but user requested Next on Left */}

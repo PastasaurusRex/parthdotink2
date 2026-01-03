@@ -99,11 +99,11 @@ export default function Home() {
                   className="group block rounded-lg border-[1.5px] border-border bg-card p-4 transition-all hover:bg-primary hover:border-foreground hover:shadow-[6px_6px_0_0_var(--foreground)] hover:-translate-x-[3px] hover:-translate-y-[3px]"
                 >
                   <div className="space-y-2">
-                    <h3 className="font-semibold text-foreground transition-colors flex items-center gap-2 group-hover:text-foreground">
+                    <h3 className="font-semibold text-foreground transition-colors flex items-center gap-2 group-hover:text-black">
                       {work.company}
-                      <ArrowUpRight size={16} className="opacity-0 -translate-y-1 translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0" />
+                      <ArrowUpRight size={16} className="opacity-0 -translate-y-1 translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 group-hover:text-black" />
                     </h3>
-                    <p className="text-sm line-clamp-2 transition-colors text-muted-foreground group-hover:text-foreground">{work.description}</p>
+                    <p className="text-sm line-clamp-2 transition-colors text-muted-foreground group-hover:text-black">{work.description}</p>
                   </div>
                 </Link>
               );

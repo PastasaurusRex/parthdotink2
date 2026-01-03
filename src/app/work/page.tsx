@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react"
 import { workHistory } from "@/lib/data"
+import { WorkTag } from "@/components/WorkTag";
 import Link from "next/link"
 import { ArrowUpRight, Download } from "lucide-react"
 
@@ -47,25 +48,25 @@ export default function Work() {
                         >
                             <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                                 <div className="space-y-2">
-                                    <h3 className="text-2xl font-bold text-foreground group-hover:text-foreground transition-colors flex items-center gap-2">
+                                    <h3 className="text-2xl font-bold text-foreground group-hover:text-black transition-colors flex items-center gap-2">
                                         {work.company}
-                                        <ArrowUpRight size={20} className="opacity-0 -translate-y-1 translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 group-hover:text-foreground" />
+                                        <ArrowUpRight size={20} className="opacity-0 -translate-y-1 translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 group-hover:text-black" />
                                     </h3>
-                                    <div className="flex flex-wrap gap-2 text-sm font-medium text-muted-foreground group-hover:text-foreground/80 transition-colors">
+                                    <div className="flex flex-wrap gap-2 text-sm font-medium text-muted-foreground group-hover:text-black/80 transition-colors">
                                         <span>{work.position}</span>
                                         <span>•</span>
                                         <span>{work.city}</span>
                                     </div>
-                                    <p className="text-muted-foreground group-hover:text-foreground/90 transition-colors">{work.description}</p>
+                                    <p className="text-muted-foreground group-hover:text-black/90 transition-colors">{work.description}</p>
                                     <div className="pt-2 flex flex-wrap gap-2">
                                         {work.tags.map((tag) => (
-                                            <span key={tag} className="rounded-full bg-emerald-500/25 px-2.5 py-0.5 text-xs font-medium text-emerald-950 group-hover:bg-rose-900 group-hover:text-rose-300 transition-colors">
+                                            <WorkTag key={tag} size="sm" interactive>
                                                 {tag}
-                                            </span>
+                                            </WorkTag>
                                         ))}
                                     </div>
                                 </div>
-                                <div className="shrink-0 text-sm font-medium text-muted-foreground group-hover:text-foreground/80 transition-colors whitespace-nowrap">
+                                <div className="shrink-0 text-sm font-medium text-muted-foreground group-hover:text-black/80 transition-colors whitespace-nowrap">
                                     {work.startDate} - {work.endDate}
                                 </div>
                             </div>

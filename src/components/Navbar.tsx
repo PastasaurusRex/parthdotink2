@@ -7,6 +7,8 @@ import { motion, AnimatePresence } from "motion/react"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
+import { ThemeToggle } from "./ThemeToggle"
+
 const navItems = [
     { name: "Home", href: "/" },
     { name: "Work", href: "/work" },
@@ -23,52 +25,56 @@ export function Navbar() {
     }, [pathname])
 
     return (
-        <nav className="fixed top-6 left-4 right-4 z-50 flex items-center justify-between p-1.5 rounded-full border border-border/40 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60 shadow-lg shadow-black/5 max-w-7xl mx-auto">
-            <Link href="/" className="pl-4 pr-2 text-xl font-serif font-medium tracking-tight text-secondary transition-opacity hover:opacity-80">
+        <nav className="fixed top-6 left-4 right-4 z-50 flex items-center justify-between p-1.5 pr-3 rounded-full border border-border/40 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60 shadow-lg shadow-black/5 max-w-7xl mx-auto">
+            <Link href="/" className="pl-4 pr-2 text-xl font-serif font-medium tracking-tight text-secondary transition-opacity hover:opacity-80 shrink-0">
                 <span className="text-emerald-700 font-sans">parth</span>
                 <span className="text-amber-500 font-sans">.</span>
                 <span className="text-emerald-700 font-serif font-medium">INK</span>
             </Link>
 
-            {/* Desktop Nav */}
-            <div className="hidden md:flex items-center gap-1">
-                {navItems.map((item) => {
-                    const isActive = pathname === item.href ||
-                        (item.href !== "/" && pathname.startsWith(item.href))
-                    return (
-                        <Link
-                            key={item.href}
-                            href={item.href}
-                            className={cn(
-                                "relative px-4 py-2 text-base font-medium transition-colors",
-                                isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
-                            )}
-                        >
-                            {isActive && (
-                                <motion.div
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    className="absolute inset-0 bg-secondary/10 rounded-full"
-                                    transition={{ duration: 0.2 }}
-                                />
-                            )}
-                            <span className="relative z-10">{item.name}</span>
-                        </Link>
-                    )
-                })}
-            </div>
+            <div className="flex items-center gap-2">
+                {/* Desktop Nav */}
+                <div className="hidden md:flex items-center gap-1">
+                    {navItems.map((item) => {
+                        const isActive = pathname === item.href ||
+                            (item.href !== "/" && pathname.startsWith(item.href))
+                        return (
+                            <Link
+                                key={item.href}
+                                href={item.href}
+                                className={cn(
+                                    "relative px-4 py-2 text-base font-medium transition-colors",
+                                    isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                                )}
+                            >
+                                {isActive && (
+                                    <motion.div
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        className="absolute inset-0 bg-secondary/10 rounded-full"
+                                        transition={{ duration: 0.2 }}
+                                    />
+                                )}
+                                <span className="relative z-10">{item.name}</span>
+                            </Link>
+                        )
+                    })}
+                </div>
 
-            {/* Mobile Menu Toggle */}
-            <motion.button
-                whileTap={{ scale: 0.95 }}
-                className="md:hidden p-2 text-foreground rounded-full hover:bg-muted transition-colors mr-1"
-                onClick={() => setIsOpen(!isOpen)}
-                aria-label={isOpen ? "Close menu" : "Open menu"}
-                aria-expanded={isOpen}
-            >
-                {isOpen ? <X size={20} /> : <Menu size={20} />}
-            </motion.button>
+                <ThemeToggle />
+
+                {/* Mobile Menu Toggle */}
+                <motion.button
+                    whileTap={{ scale: 0.95 }}
+                    className="md:hidden p-2 text-foreground rounded-full hover:bg-muted transition-colors mr-1"
+                    onClick={() => setIsOpen(!isOpen)}
+                    aria-label={isOpen ? "Close menu" : "Open menu"}
+                    aria-expanded={isOpen}
+                >
+                    {isOpen ? <X size={20} /> : <Menu size={20} />}
+                </motion.button>
+            </div>
 
             {/* Mobile Nav - Flyout */}
             <AnimatePresence>
