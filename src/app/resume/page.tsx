@@ -2,4 +2,5 @@ import { redirect } from 'next/navigation'
 
 export default function ResumePage() {
     redirect('/assets/documents/resume.pdf')
+    return null
 }

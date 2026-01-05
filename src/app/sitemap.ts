@@ -1,4 +1,4 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next'
 import { workHistory } from '@/lib/data'
 
 export default function sitemap(): MetadataRoute.Sitemap {

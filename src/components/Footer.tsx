@@ -1,6 +1,9 @@
+"use client"
+
 import Link from "next/link"
 import { Instagram, Linkedin, Twitter, Mail } from "lucide-react"
 import { ActivityTicker } from "./ActivityTicker"
+import { ColophonPopover } from "./ColophonPopover"
 
 export function Footer() {
     return (
@@ -14,6 +17,8 @@ export function Footer() {
                         <Link href="/terms" className="hover:text-foreground transition-colors">Terms</Link>
                         <span>•</span>
                         <Link href="/privacy" className="hover:text-foreground transition-colors">Privacy</Link>
+                        <span>•</span>
+                        <ColophonPopover />
                     </div>
                 </div>
 

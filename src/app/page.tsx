@@ -2,10 +2,9 @@
 
 import Link from "next/link"
 import { motion, AnimatePresence } from "motion/react"
-import { ArrowRight, ArrowUpRight } from "lucide-react"
-import { workHistory } from "@/lib/data"
+import { ArrowRight } from "lucide-react"
 import { useState, useEffect } from "react"
-import { cn } from "@/lib/utils"
+import { HomepageClientsTicker } from "@/components/HomepageClientsTicker"
 
 const roles = [
   "storyteller",
@@ -83,32 +82,17 @@ export default function Home() {
           </motion.div>
         </motion.div>
 
+        {/* Brands Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="space-y-6"
+          className="space-y-4 pt-4"
         >
-          <div className="grid gap-4 sm:grid-cols-3">
-            {/* Teaser Cards */}
-            {[workHistory[0], workHistory[1], workHistory[4]].map((work) => {
-              return (
-                <Link
-                  key={work.slug}
-                  href={`/work/${work.slug}`}
-                  className="group block rounded-lg border-[1.5px] border-border bg-card p-4 transition-all hover:bg-primary hover:border-foreground hover:shadow-[6px_6px_0_0_var(--foreground)] hover:-translate-x-[3px] hover:-translate-y-[3px]"
-                >
-                  <div className="space-y-2">
-                    <h3 className="font-semibold text-foreground transition-colors flex items-center gap-2 group-hover:text-black">
-                      {work.company}
-                      <ArrowUpRight size={16} className="opacity-0 -translate-y-1 translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 group-hover:text-black" />
-                    </h3>
-                    <p className="text-sm line-clamp-2 transition-colors text-muted-foreground group-hover:text-black">{work.description}</p>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
+          <p className="text-lg text-muted-foreground sm:text-xl">
+            Some brands I&apos;ve worked with
+          </p>
+          <HomepageClientsTicker />
         </motion.div>
 
         <motion.div

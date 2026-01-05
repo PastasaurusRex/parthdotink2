@@ -22,7 +22,7 @@ export default function Work() {
                         href="/assets/documents/resume.pdf"
                         download="resume.pdf"
                         target="_blank"
-                        className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full border-[1.5px] border-border bg-sky-950 px-6 py-3 text-sm font-medium text-amber-50 transition-all hover:bg-sky-600 hover:text-white hover:shadow-[4px_4px_0_0_var(--foreground)] hover:-translate-x-[2px] hover:-translate-y-[2px] w-full sm:w-auto"
+                        className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full border-[1.5px] border-border bg-sky-950 px-6 py-3 text-sm font-medium text-amber-50 transition-all hover:bg-sky-600 hover:text-white hover:shadow-[4px_4px_0_0_var(--foreground)] hover:-translate-x-[2px] hover:-translate-y-[2px] self-start"
                     >
                         <Download size={18} />
                         Download resume

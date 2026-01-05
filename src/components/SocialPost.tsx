@@ -29,7 +29,7 @@ export function SocialPost({
         return text.split(/\s+/).map((word, i) => {
             if (word.startsWith("#")) {
                 return (
-                    <span key={i} className="text-sky-600 font-medium">
+                    <span key={i} className="text-sky-600 dark:text-blue-300 font-medium">
                         {word}{" "}
                     </span>
                 );

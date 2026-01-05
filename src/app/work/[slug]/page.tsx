@@ -73,7 +73,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
                 </div>
 
                 <div
-                    className="space-y-6 leading-relaxed text-muted-foreground prose-headings:text-foreground prose-strong:text-foreground prose-a:text-foreground prose-a:underline prose-a:decoration-muted-foreground/30 prose-a:underline-offset-4 hover:prose-a:decoration-foreground prose-a:transition-colors"
+                    className="space-y-6 leading-relaxed text-muted-foreground prose-headings:text-foreground prose-strong:text-foreground prose-a:text-foreground dark:prose-a:text-blue-300 prose-a:underline prose-a:decoration-muted-foreground/30 prose-a:underline-offset-4 hover:prose-a:decoration-foreground prose-a:transition-colors"
                     dangerouslySetInnerHTML={{ __html: work.content }}
                 />
 
