@@ -110,7 +110,7 @@ export const workHistory: WorkItem[] = [
             <p>My 8 months at Storypick helped me get my foot in the door in the digital media industry and paved the way for every single position I've held since.</p>
         `,
         tags: ["Creative Writing", "Content Creation", "SEO"],
-        website: "https://storypick.com",
+        website: "https://storypick.com/author/parth/",
         websiteLabel: "storypick.com"
     }
 ];

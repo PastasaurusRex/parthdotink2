@@ -172,7 +172,25 @@
   from {
     clip-path: circle(0px at var(--toggle-x) var(--toggle-y));
   }
+
   to {
     clip-path: circle(var(--toggle-radius) at var(--toggle-x) var(--toggle-y));
   }
+}
+
+/* Exclude navbar from circular animation to preserve backdrop-blur */
+::view-transition-group(navbar) {
+  animation: none;
+  z-index: 9999;
+}
+
+/* Make navbar switch instant (no cross-fade) to avoid gray intermediate state */
+::view-transition-old(navbar) {
+  animation: none;
+  opacity: 0;
+}
+
+::view-transition-new(navbar) {
+  animation: none;
+  opacity: 1;
 }

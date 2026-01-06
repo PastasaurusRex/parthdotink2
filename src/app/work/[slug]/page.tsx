@@ -5,6 +5,8 @@ import { ArrowLeft, MapPin, Calendar, Briefcase, ExternalLink, ArrowRight } from
 import { Metadata } from "next";
 import { ClientsTicker } from "@/components/ClientsTicker";
 import { WorkTag } from "@/components/WorkTag";
+import { ArticleCard } from "@/components/ArticleCard";
+import { ArticleCarousel } from "@/components/ArticleCarousel";
 
 export async function generateStaticParams() {
     return workHistory.map((work) => ({
@@ -84,6 +86,82 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
                             Clients
                         </h2>
                         <ClientsTicker />
+                    </div>
+                )}
+
+                {/* Article Section - Only for Storypick */}
+                {work.slug === "storypick" && (
+                    <div className="space-y-6 pt-4">
+                        <h2 className="text-2xl font-serif font-bold tracking-tight text-foreground">
+                            Featured Articles
+                        </h2>
+                        <ArticleCarousel
+                            articles={[
+                                {
+                                    thumbnail: "https://storypick.com/wp-content/uploads/2016/03/coffee_cover.jpg",
+                                    url: "storypick.com/yes-ill-have-one-mazagran-please",
+                                    link: "https://www.storypick.com/yes-ill-have-one-mazagran-please/",
+                                    title: "22 Types Of Coffee Around The World And How They're Made",
+                                    caption: "*overdoses on caffeine and spazzes out all over the place*",
+                                    interactions: "4.6k",
+                                    shares: "82.1k",
+                                },
+                                {
+                                    thumbnail: "https://storypick.com/wp-content/uploads/2016/04/cn_cover.jpg",
+                                    url: "storypick.com/oh-mama",
+                                    link: "https://www.storypick.com/oh-mama/",
+                                    title: "30 Cartoon Characters That No 90's Kid Can Ever Get Over",
+                                    caption: "*plays batman theme on loop*",
+                                    interactions: "8.5k",
+                                    shares: "20k",
+                                },
+                                {
+                                    thumbnail: "https://storypick.com/wp-content/uploads/2016/02/13038860104_cover.jpg",
+                                    url: "storypick.com/confessions-of-an-agnostic",
+                                    link: "https://www.storypick.com/confessions-of-an-agnostic/",
+                                    title: "Confessions Of An Agnostic Child Of Religious Parents",
+                                    caption: "There are no multiple Gods, but one true God",
+                                    interactions: "9.4k",
+                                    shares: "14.3k",
+                                },
+                                {
+                                    thumbnail: "https://storypick.com/wp-content/uploads/2016/02/hp_cover_1.jpg",
+                                    url: "storypick.com/nitwit-blubber-oddment-tweak",
+                                    link: "https://www.storypick.com/nitwit-blubber-oddment-tweak/",
+                                    title: "First And Last Lines Of 20 Favourite Characters From Harry Potter",
+                                    caption: "From the beginning until the very end!",
+                                    interactions: "5.8k",
+                                    shares: "9.2k",
+                                },
+                                {
+                                    thumbnail: "https://storypick.com/wp-content/uploads/2016/01/mumbai_cover-1.jpg",
+                                    url: "storypick.com/mumbai-tour-in-750",
+                                    link: "https://www.storypick.com/mumbai-tour-in-750/",
+                                    title: "If You Have Rs. 750 In Your Pocket, This Is The Best Way To Spend A Day In Mumbai",
+                                    caption: "Ye hai Mumbai meri jaan!",
+                                    interactions: "4.2k",
+                                    shares: "8.4k",
+                                },
+                                {
+                                    thumbnail: "https://storypick.com/wp-content/uploads/2016/03/cap_cover_02.jpg",
+                                    url: "storypick.com/come-spend-some-days-in-asia",
+                                    link: "https://www.storypick.com/come-spend-some-days-in-asia/",
+                                    title: "8 Asian Countries You Can Visit For Your Next Vacation",
+                                    caption: "The continent has innumerable wanderlust quenchers",
+                                    interactions: "777",
+                                    shares: "3.4k",
+                                },
+                                {
+                                    thumbnail: "https://storypick.com/wp-content/uploads/2016/03/cm_cover.jpg",
+                                    url: "storypick.com/huh-what-just-happened-huh",
+                                    link: "https://www.storypick.com/huh-what-just-happened-huh/",
+                                    title: "20 Movies Which Will Confuse The Hell Out Of You",
+                                    caption: "I bet you can't watch just once.",
+                                    interactions: "751",
+                                    shares: "2.6k",
+                                }
+                            ]}
+                        />
                     </div>
                 )}
 

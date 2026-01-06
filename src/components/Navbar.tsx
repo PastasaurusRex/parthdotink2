@@ -25,7 +25,10 @@ export function Navbar() {
     }, [pathname])
 
     return (
-        <nav className="fixed top-6 left-4 right-4 z-50 flex items-center justify-between p-1.5 pr-3 rounded-full border border-border/40 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60 shadow-lg shadow-black/5 max-w-7xl mx-auto">
+        <nav
+            className="fixed top-6 left-4 right-4 z-50 flex items-center justify-between p-1.5 pr-3 rounded-full border border-border/40 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60 shadow-lg shadow-black/5 max-w-7xl mx-auto"
+            style={{ viewTransitionName: "navbar" } as React.CSSProperties}
+        >
             <Link href="/" className="pl-4 pr-2 text-xl font-serif font-medium tracking-tight text-secondary transition-opacity hover:opacity-80 shrink-0">
                 <span className="text-emerald-700 font-sans">parth</span>
                 <span className="text-amber-500 font-sans">.</span>
