@@ -98,7 +98,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
                         <ArticleCarousel
                             articles={[
                                 {
-                                    thumbnail: "https://storypick.com/wp-content/uploads/2016/03/coffee_cover.jpg",
+                                    thumbnail: "/assets/images/storypick/coffee_cover.jpg",
                                     url: "storypick.com/yes-ill-have-one-mazagran-please",
                                     link: "https://www.storypick.com/yes-ill-have-one-mazagran-please/",
                                     title: "22 Types Of Coffee Around The World And How They're Made",
@@ -107,7 +107,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
                                     shares: "82.1k",
                                 },
                                 {
-                                    thumbnail: "https://storypick.com/wp-content/uploads/2016/04/cn_cover.jpg",
+                                    thumbnail: "/assets/images/storypick/cartoons_cover.jpg",
                                     url: "storypick.com/oh-mama",
                                     link: "https://www.storypick.com/oh-mama/",
                                     title: "30 Cartoon Characters That No 90's Kid Can Ever Get Over",
@@ -116,7 +116,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
                                     shares: "20k",
                                 },
                                 {
-                                    thumbnail: "https://storypick.com/wp-content/uploads/2016/02/13038860104_cover.jpg",
+                                    thumbnail: "/assets/images/storypick/agnostic_cover.jpg",
                                     url: "storypick.com/confessions-of-an-agnostic",
                                     link: "https://www.storypick.com/confessions-of-an-agnostic/",
                                     title: "Confessions Of An Agnostic Child Of Religious Parents",
@@ -125,7 +125,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
                                     shares: "14.3k",
                                 },
                                 {
-                                    thumbnail: "https://storypick.com/wp-content/uploads/2016/02/hp_cover_1.jpg",
+                                    thumbnail: "/assets/images/storypick/harrypotter_cover.jpg",
                                     url: "storypick.com/nitwit-blubber-oddment-tweak",
                                     link: "https://www.storypick.com/nitwit-blubber-oddment-tweak/",
                                     title: "First And Last Lines Of 20 Favourite Characters From Harry Potter",
@@ -134,7 +134,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
                                     shares: "9.2k",
                                 },
                                 {
-                                    thumbnail: "https://storypick.com/wp-content/uploads/2016/01/mumbai_cover-1.jpg",
+                                    thumbnail: "/assets/images/storypick/mumbai_cover.jpg",
                                     url: "storypick.com/mumbai-tour-in-750",
                                     link: "https://www.storypick.com/mumbai-tour-in-750/",
                                     title: "If You Have Rs. 750 In Your Pocket, This Is The Best Way To Spend A Day In Mumbai",
@@ -143,7 +143,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
                                     shares: "8.4k",
                                 },
                                 {
-                                    thumbnail: "https://storypick.com/wp-content/uploads/2016/03/cap_cover_02.jpg",
+                                    thumbnail: "/assets/images/storypick/asian_cover.jpg",
                                     url: "storypick.com/come-spend-some-days-in-asia",
                                     link: "https://www.storypick.com/come-spend-some-days-in-asia/",
                                     title: "8 Asian Countries You Can Visit For Your Next Vacation",
@@ -152,7 +152,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
                                     shares: "3.4k",
                                 },
                                 {
-                                    thumbnail: "https://storypick.com/wp-content/uploads/2016/03/cm_cover.jpg",
+                                    thumbnail: "/assets/images/storypick/movies_cover.jpg",
                                     url: "storypick.com/huh-what-just-happened-huh",
                                     link: "https://www.storypick.com/huh-what-just-happened-huh/",
                                     title: "20 Movies Which Will Confuse The Hell Out Of You",
